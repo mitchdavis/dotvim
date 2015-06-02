@@ -84,6 +84,9 @@ endfunction
 " Commenting tools
 Plugin 'scrooloose/nerdcommenter.git'
 
+" Indentation management
+Plugin 'michaeljsmith/vim-indent-object.git'
+
 " Lets you deal with braket pairs etc.
 Plugin 'tpope/vim-surround.git'
 
