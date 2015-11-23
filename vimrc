@@ -177,6 +177,9 @@ if v:version > 702
     let g:gundo_help  = 0
 endif
 
+" Improved tab key handling
+Bundle 'ervandew/supertab'
+
 " A better status line
 Plugin 'Lokaltog/vim-powerline.git'
 let g:Powerline_stl_path_style='relative'
@@ -197,8 +200,15 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 nnoremap <leader>u :UltiSnipsEdit<CR>
 
-let g:UltiSnipsExpandTrigger="<nul>"
-let g:UltiSnipsJumpForwardTrigger="<nul>"
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger="<cr>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " Syntax highlighting interface
 Plugin 'scrooloose/syntastic.git'
